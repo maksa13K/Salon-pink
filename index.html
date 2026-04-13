@@ -3,29 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Salon Pink | Banja Luka</title>
+    <title>Studio Salon Pink | Premium Ljepota Banja Luka</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #fffafb; color: #333; }
-        header { background-color: #ff69b4; color: white; padding: 20px 0; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5em; }
-        nav { margin-top: 15px; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em; }
-        .hero { background-color: #ffe4e1; text-align: center; padding: 60px 20px; }
-        .hero h2 { color: #c71585; font-size: 2.2em; }
-        .btn { background-color: #c71585; color: white; padding: 12px 30px; text-decoration: none; border-radius: 25px; }
-        .services-section { padding: 50px 20px; text-align: center; }
-        .services-section h2 { color: #ff69b4; font-size: 2em; }
+        :root {
+            --primary-pink: #ff66a3;
+            --dark-pink: #d8437d;
+            --light-pink: #fff0f5;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #fafafa; color: var(--text-dark); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
+        /* Navbar */
+        header { background: rgba(255, 255, 255, 0.95); position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 15px 5%; display: flex; justify-content: center; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary-pink); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; }
+        
+        /* Hero Section */
+        .hero { height: 100vh; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
+        .hero h1 { color: var(--text-light); font-size: 3.5rem; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { color: var(--text-light); font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        .btn { display: inline-block; padding: 15px 35px; background-color: var(--primary-pink); color: white; text-decoration: none; border-radius: 30px; font-weight: 600; text-transform: uppercase; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 102, 163, 0.4); }
+        .btn:hover { background-color: var(--dark-pink); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(216, 67, 125, 0.6); }
+
+        /* Services */
+        .services { padding: 80px 5%; text-align: center; background-color: var(--light-pink); }
+        .services h2 { font-size: 2.5rem; color: var(--primary-pink); margin-bottom: 40px; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-card { background: white; padding: 40px 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
+        .service-card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--primary-pink); }
+        .service-icon { font-size: 3rem; margin-bottom: 20px; }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--text-dark); }
+        .service-card p { color: #666; font-size: 0.95rem; }
+
+        /* Footer */
+        footer { background-color: #222; color: white; padding: 60px 5% 20px; text-align: center; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
+        .footer-col h3 { color: var(--primary-pink); margin-bottom: 20px; font-size: 1.5rem; }
+        .footer-col p { color: #ccc; margin-bottom: 10px; font-size: 0.95rem; }
+        .footer-bottom { border-top: 1px solid #444; padding-top: 20px; color: #888; font-size: 0.9rem; }
+
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>STUDIO SALON PINK</h1>
-        <nav><a href="#pocetna">Početna</a></nav>
+        <a href="#" class="logo">Studio Pink</a>
     </header>
-    <section id="pocetna" class="hero">
-        <h2>Otkrijte svoju najljepšu stranu</h2>
-        <p>Vaše omiljeno mjesto za ljepotu u srcu Banja Luke.</p>
-        <a href="#kontakt" class="btn">Zakažite termin</a>
+
+    <section class="hero">
+        <h1>Studio Salon Pink</h1>
+        <p>Ekskluzivni centar za ljepotu i njegu u srcu Banja Luke. Doživite premium uslugu i zablistajte.</p>
+        <a href="#kontakt" class="btn">Zakažite Termin</a>
     </section>
+
+    <section class="services" id="usluge">
+        <h2>Naše Premium Usluge</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon">💇‍♀️</div>
+                <h3>Frizerski Studio</h3>
+                <p>Balayage, keratinsko ispravljanje, profesionalno šišanje i stilizovanje uz vrhunske preparate.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💅</div>
+                <h3>Nail Art & Spa</h3>
+                <p>Ruski manikir, izlivanje noktiju i spa pedikir za savršen izgled vaših ruku i stopala.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💄</div>
+                <h3>Profesionalni Makeup</h3>
+                <p>Večernja i dnevna šminka za vjenčanja, mature i sve vaše bitne proslave.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontakt">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Studio Salon Pink</h3>
+                <p>Vaša oaza ljepote u Banjoj Luci. Radimo sa najkvalitetnijim svjetskim brendovima kako bismo vam pružili najbolje.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Kontakt</h3>
+                <p>📍 Gospodska ulica bb, Banja Luka</p>
+                <p>📞 +387 65 123 456</p>
+                <p>✉️ info@studiosalonpink.ba</p>
+            </div>
+            <div class="footer-col">
+                <h3>Radno Vrijeme</h3>
+                <p>Pon - Pet: 09:00 - 20:00</p>
+                <p>Subota: 09:00 - 16:00</p>
+                <p>Nedjelja: Zatvoreno</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Studio Salon Pink Banja Luka. Sva prava zadržana.
+        </div>
+    </footer>
 </body>
 </html>
