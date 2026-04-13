@@ -3,62 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Salon Pink | VIP Luxury</title>
+    <title>Studio Salon Pink | Modern Chic</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --neon-pink: #ff4da6;
-            --rose-gold: #b76e79;
-            --dark-bg: #0a0a0a;
-            --card-bg: #141414;
-            --text-light: #f5f5f5;
-            --text-muted: #aaaaaa;
+            --dusty-rose: #dca4a6;
+            --blush: #f8e5e5;
+            --champagne: #f4ece6;
+            --cream-bg: #fdfbf9;
+            --card-bg: #ffffff;
+            --text-dark: #4a4a4a;
+            --text-muted: #7a7a7a;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: var(--text-light); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--cream-bg); color: var(--text-dark); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: #333; }
         /* Navbar */
-        header { background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; padding: 20px 5%; border-bottom: 1px solid rgba(255, 77, 166, 0.2); text-align: center; }
-        .logo { font-size: 2rem; font-weight: 700; color: var(--neon-pink); text-decoration: none; letter-spacing: 3px; text-transform: uppercase; text-shadow: 0 0 10px rgba(255, 77, 166, 0.5); }
+        header { background: rgba(253, 251, 249, 0.95); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; padding: 20px 5%; box-shadow: 0 2px 15px rgba(0,0,0,0.05); text-align: center; }
+        .logo { font-size: 2rem; font-weight: 700; color: var(--dusty-rose); text-decoration: none; letter-spacing: 2px; text-transform: uppercase; }
         /* Hero Section */
-        .hero { height: 100vh; background: linear-gradient(to bottom, rgba(10,10,10,0.7), var(--dark-bg)), url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover fixed; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; animation: fadeIn 2s ease; }
-        .hero h1 { font-size: 4rem; margin-bottom: 20px; color: var(--text-light); font-weight: 400; letter-spacing: 2px; }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; max-width: 600px; font-weight: 300; }
-        .btn { display: inline-block; padding: 15px 40px; background: transparent; color: var(--neon-pink); border: 1px solid var(--neon-pink); text-decoration: none; border-radius: 0; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; transition: all 0.4s ease; cursor: pointer; }
-        .btn:hover { background: var(--neon-pink); color: #fff; box-shadow: 0 0 20px var(--neon-pink); }
+        .hero { height: 100vh; background: linear-gradient(to bottom, rgba(253, 251, 249, 0.3), rgba(253, 251, 249, 0.9)), url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover fixed; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; animation: fadeIn 2s ease; }
+        .hero h1 { font-size: 4rem; margin-bottom: 20px; color: #222; font-weight: 400; letter-spacing: 1px; }
+        .hero p { font-size: 1.2rem; color: #555; margin-bottom: 40px; max-width: 600px; font-weight: 300; }
+        .btn { display: inline-block; padding: 15px 40px; background: var(--dusty-rose); color: #fff; border: 1px solid var(--dusty-rose); text-decoration: none; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; transition: all 0.4s ease; cursor: pointer; }
+        .btn:hover { background: transparent; color: var(--dusty-rose); }
         /* Sections */
         section { padding: 100px 5%; text-align: center; }
-        .section-title { font-size: 2.5rem; color: var(--text-light); margin-bottom: 60px; font-weight: 400; position: relative; display: inline-block; }
-        .section-title::after { content: ''; position: absolute; width: 50%; height: 2px; background: var(--neon-pink); bottom: -15px; left: 25%; }
+        .section-title { font-size: 2.5rem; color: #222; margin-bottom: 60px; font-weight: 400; position: relative; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; width: 50%; height: 2px; background: var(--dusty-rose); bottom: -15px; left: 25%; }
         /* Services */
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card { background: var(--card-bg); padding: 50px 30px; border: 1px solid #222; transition: transform 0.4s ease, border-color 0.4s ease; }
-        .service-card:hover { transform: translateY(-10px); border-color: var(--neon-pink); box-shadow: 0 10px 30px rgba(255, 77, 166, 0.1); }
-        .service-icon { font-size: 2.5rem; margin-bottom: 20px; color: var(--rose-gold); }
+        .service-card { background: var(--card-bg); padding: 50px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.4s ease; border-radius: 5px; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(220, 164, 166, 0.15); }
+        .service-icon { font-size: 2.5rem; margin-bottom: 20px; color: var(--dusty-rose); }
         .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 400; }
         .service-card p { color: var(--text-muted); font-size: 0.95rem; font-weight: 300; }
         /* Gallery */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
-        .gallery-item { height: 300px; background-size: cover; background-position: center; filter: grayscale(50%); transition: filter 0.5s ease, transform 0.5s ease; cursor: pointer; border: 1px solid #333; }
-        .gallery-item:hover { filter: grayscale(0%); transform: scale(1.02); z-index: 10; border-color: var(--neon-pink); }
+        .gallery-item { height: 300px; background-size: cover; background-position: center; transition: transform 0.5s ease; cursor: pointer; border-radius: 5px; }
+        .gallery-item:hover { transform: scale(1.02); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         /* Booking Form */
-        .booking-section { background: var(--card-bg); border-top: 1px solid #222; border-bottom: 1px solid #222; }
-        .booking-form { max-width: 600px; margin: 0 auto; display: grid; gap: 20px; text-align: left; }
+        .booking-section { background: var(--blush); }
+        .booking-form { max-width: 600px; margin: 0 auto; display: grid; gap: 20px; text-align: left; background: #fff; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 5px; }
         .form-group { display: flex; flex-direction: column; gap: 8px; }
-        .form-group label { color: var(--rose-gold); font-family: 'Playfair Display', serif; font-size: 1.1rem; }
-        .booking-form input, .booking-form select { padding: 15px; background: var(--dark-bg); border: 1px solid #333; color: var(--text-light); font-family: 'Montserrat', sans-serif; outline: none; transition: border-color 0.3s; }
-        .booking-form input:focus, .booking-form select:focus { border-color: var(--neon-pink); }
+        .form-group label { color: #333; font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+        .booking-form input, .booking-form select { padding: 15px; background: var(--cream-bg); border: 1px solid #eee; color: var(--text-dark); font-family: 'Montserrat', sans-serif; outline: none; transition: border-color 0.3s; }
+        .booking-form input:focus, .booking-form select:focus { border-color: var(--dusty-rose); }
         /* Reviews */
         .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .review-card { background: var(--card-bg); padding: 40px; font-style: italic; position: relative; }
-        .review-card::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 4rem; color: var(--neon-pink); opacity: 0.2; font-family: serif; }
-        .review-author { margin-top: 20px; font-family: 'Playfair Display', serif; color: var(--rose-gold); font-style: normal; }
+        .review-card { background: var(--card-bg); padding: 40px; font-style: italic; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border-radius: 5px; }
+        .review-card::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 4rem; color: var(--blush); font-family: serif; z-index: 0; }
+        .review-card p { position: relative; z-index: 1; }
+        .review-author { margin-top: 20px; font-family: 'Playfair Display', serif; color: var(--dusty-rose); font-style: normal; font-weight: 700; }
         /* Footer */
-        footer { background: #000; padding: 80px 5% 30px; border-top: 2px solid var(--neon-pink); }
+        footer { background: var(--champagne); padding: 80px 5% 30px; }
         .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left; margin-bottom: 50px; }
-        .footer-col h3 { color: var(--neon-pink); margin-bottom: 25px; font-size: 1.5rem; }
+        .footer-col h3 { color: #333; margin-bottom: 25px; font-size: 1.5rem; }
         .footer-col p { color: var(--text-muted); margin-bottom: 15px; font-weight: 300; }
-        .footer-bottom { text-align: center; border-top: 1px solid #222; padding-top: 30px; color: #666; font-size: 0.9rem; }
+        .footer-bottom { text-align: center; border-top: 1px solid #ddd; padding-top: 30px; color: #888; font-size: 0.9rem; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @media(max-width: 768px) { .hero h1 { font-size: 2.8rem; } }
     </style>
@@ -69,34 +71,34 @@
     </header>
 
     <section class="hero">
-        <h1>VIP Beauty Lounge</h1>
-        <p>Luksuz koji zaslužujete. Vrhunski tretmani, internacionalni brendovi i ambijent dizajniran za vaše potpuno opuštanje.</p>
+        <h1>Elegancija & Stil</h1>
+        <p>Mjesto gdje se susreću sofisticiranost i vrhunska njega. Doživite premium tretmane u predivnom, opuštajućem ambijentu.</p>
         <a href="#rezervacija" class="btn">Rezerviši svoj termin</a>
     </section>
 
     <section id="usluge">
-        <h2 class="section-title">Ekskluzivni Tretmani</h2>
+        <h2 class="section-title">Naše Usluge</h2>
         <div class="service-grid">
             <div class="service-card">
                 <div class="service-icon">✦</div>
-                <h3>Premium Hair</h3>
-                <p>Olaplex tretmani, majstorski balayage i stilizovanje sa luksuznim Kérastase preparatima.</p>
+                <h3>Hair Styling</h3>
+                <p>Njegovana i zdrava kosa uz najkvalitetnije tretmane, moderne tehnike sjenčenja i savršeno šišanje.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">✧</div>
-                <h3>Nail Couture</h3>
-                <p>Dizajn noktiju najviše klase, aparaturni manikir i luksuzni spa rituali za stopala.</p>
+                <h3>Nail Care</h3>
+                <p>Besprekoran manikir i pedikir uz fokus na zdravlje nokta i prefinjen estetski dizajn.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">✦</div>
-                <h3>Glam Makeup</h3>
-                <p>Besprijekoran izgled za crveni tepih, vjenčanja i specijalne događaje uz MAC i Dior kozmetiku.</p>
+                <h3>Makeup Art</h3>
+                <p>Prirodan sjaj ili glamurozni izgled za vaše najbitnije trenutke uz vrhunsku kozmetiku.</p>
             </div>
         </div>
     </section>
 
     <section id="galerija" style="padding-top: 0;">
-        <h2 class="section-title">Naš Rad</h2>
+        <h2 class="section-title">Inspiracija</h2>
         <div class="gallery-grid">
             <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')"></div>
             <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1519014816548-bf5fe059e98b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')"></div>
@@ -119,7 +121,7 @@
             <div class="form-group">
                 <label>Odaberite Uslugu</label>
                 <select required>
-                    <option value="" disabled selected>Izaberite uslugu iz menija...</option>
+                    <option value="" disabled selected>Izaberite uslugu...</option>
                     <option value="hair">Frizerske usluge / Kolorizacija</option>
                     <option value="nails">Manikir / Pedikir</option>
                     <option value="makeup">Profesionalno šminkanje</option>
@@ -130,18 +132,18 @@
     </section>
 
     <section id="utisci">
-        <h2 class="section-title">Šta Kažu Klijenti</h2>
+        <h2 class="section-title">Riječi Klijenata</h2>
         <div class="reviews-grid">
             <div class="review-card">
-                <p>Najbolji salon u Banjoj Luci! Profesionalnost na najvišem nivou i ambijent u kojem se osjećam kao kraljica.</p>
+                <p>Prelijep ambijent, izuzetno čisto i osoblje koje zaista sluša šta želite. Moja topla preporuka!</p>
                 <div class="review-author">- Jelena M.</div>
             </div>
             <div class="review-card">
-                <p>Moja kosa nikada nije izgledala zdravije. Sve pohvale za tim koji koristi samo premium preparate.</p>
+                <p>Konačno sam pronašla mjesto gdje se osjećam opušteno. Kosa mi nikada nije izgledala bolje.</p>
                 <div class="review-author">- Sara K.</div>
             </div>
             <div class="review-card">
-                <p>Šminka za vjenčanje je izdržala cijelu noć bez ijedne greške. Savršeno iskustvo od početka do kraja.</p>
+                <p>Šminka je bila fantastična, lagana na licu, a trajala je cijeli dan. Divno iskustvo.</p>
                 <div class="review-author">- Milica T.</div>
             </div>
         </div>
@@ -151,23 +153,23 @@
         <div class="footer-content">
             <div class="footer-col">
                 <h3>Studio Salon Pink</h3>
-                <p>Simbol luksuza i besprijekorne usluge u srcu grada. Posjetite nas i prepustite se čarima vrhunske njege.</p>
+                <p>Vaše omiljeno mjesto za ljepotu, odmor i vrhunsku njegu u samom centru grada.</p>
             </div>
             <div class="footer-col">
-                <h3>VIP Kontakt</h3>
-                <p>📍 Gospodska VIP Zona, Banja Luka</p>
+                <h3>Kontakt</h3>
+                <p>📍 Gospodska ulica, Banja Luka</p>
                 <p>📞 +387 65 123 456</p>
-                <p>✉️ vip@studiosalonpink.ba</p>
+                <p>✉️ info@studiosalonpink.ba</p>
             </div>
             <div class="footer-col">
                 <h3>Radno Vrijeme</h3>
-                <p>Pon - Pet: 09:00 - 21:00</p>
-                <p>Subota: 09:00 - 18:00</p>
-                <p>Nedjelja: VIP Termini na upit</p>
+                <p>Pon - Pet: 09:00 - 20:00</p>
+                <p>Subota: 09:00 - 16:00</p>
+                <p>Nedjelja: Zatvoreno</p>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 Studio Salon Pink VIP. Sva prava zadržana.
+            &copy; 2026 Studio Salon Pink. Sva prava zadržana.
         </div>
     </footer>
 </body>
